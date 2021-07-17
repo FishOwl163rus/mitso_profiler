@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
+      theme: ThemeData(inputDecorationTheme: InputDecorationTheme(prefixStyle: TextStyle(color: defaultColor))),
       home: MyHomePage(),
     );
   }
@@ -58,13 +59,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     child: TextField(
                       decoration: InputDecoration(
-                        contentPadding: EdgeInsets.only(top: 10),
-                        hintText: "Номер лицевого счета",
-                        prefixIcon: Icon(Icons.person),
-                        focusColor: defaultColor,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                        ),
+                          contentPadding: EdgeInsets.only(top: 10),
+                          hintText: "Номер лицевого счета",
+                          prefixIcon: Icon(Icons.person),
+                          focusColor: defaultColor,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(30),
+                          ),
                       ),
                     ),
                   ),
@@ -102,7 +103,9 @@ class _MyHomePageState extends State<MyHomePage> {
                             text: TextSpan(
                               children: <TextSpan>[
                                 TextSpan(
-                                    style: TextStyle(color: Colors.black38, decoration: TextDecoration.underline),
+                                    style: TextStyle(
+                                        color: Colors.black38,
+                                        decoration: TextDecoration.underline),
                                     text: 'Забыли пароль?',
                                     recognizer: TapGestureRecognizer()
                                       ..onTap = () {}),
@@ -130,7 +133,8 @@ class _MyHomePageState extends State<MyHomePage> {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => ProfileWidget()),
+                            MaterialPageRoute(
+                                builder: (context) => ProfileWidget()),
                           );
                         },
                         child: Text(
@@ -147,4 +151,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-

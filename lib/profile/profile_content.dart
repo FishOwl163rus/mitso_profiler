@@ -13,7 +13,8 @@ class ProfileContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return SingleChildScrollView(child:  Column(children: [
+    return SingleChildScrollView(
+        child: Column(children: [
       HeaderProfile(size: size),
       Text("Романов Максим Дмитриевич",
           style: TextStyle(fontFamily: "Futurica", fontSize: 25),
@@ -22,52 +23,110 @@ class ProfileContent extends StatelessWidget {
           style: TextStyle(
               fontFamily: "Futurica", fontSize: 18, color: Colors.black45)),
       Container(
-        padding: EdgeInsets.only(top: 10, bottom: 10),
-        alignment: Alignment.center,
-        child:
-          Card(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10.0),
-            ),
-            margin: EdgeInsets.all(10),
-            color: Colors.white,
-            shadowColor: Colors.blueGrey,
-            elevation: 10,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                SizedBox(height: 5),
-                const ListTile(
-                  leading: Icon(Icons.info, color: defaultColor, size: 45),
-                  title: Text(
-                    "Общая информация",
-                    style: TextStyle(fontSize: 16),
+          padding: EdgeInsets.all(8),
+          alignment: Alignment.center,
+          child: Column(
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.white),
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  image: DecorationImage(
+                    image: AssetImage("assets/images/info.png"),
+                    fit: BoxFit.cover,
                   ),
-                  subtitle: Text("Факультет: Экономический\nКурс: 3\nГруппа: 1920\nФорма обучения: Очная"),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey,
+                      blurRadius: 2.0,
+                      spreadRadius: 0.0,
+                      offset: Offset(2.0, 3.0), // shadow direction: bottom right
+                    )
+                  ],
                 ),
-                SizedBox(height: 15),
-                const ListTile(
-                  leading: Icon(Icons.monetization_on, color: defaultColor, size: 45),
-                  title: Text(
-                    "Финансы",
-                    style: TextStyle(fontSize: 16),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    SizedBox(height: 5),
+                    const ListTile(
+                      title: Text(
+                        "Общая информация",
+                        style: TextStyle(fontSize: 16),
+                      ),
+                      subtitle: Text(
+                          "Факультет: Экономический\nКурс: 3\nГруппа: 1920\nФорма обучения: Очная"),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 15,),
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.white),
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  image: DecorationImage(
+                    image: AssetImage("assets/images/payment.png"),
+                    fit: BoxFit.cover,
                   ),
-                  subtitle: Text("Баланс: 0.00\nДолг: 0.00\nПеня: 0.00"),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey,
+                      blurRadius: 2.0,
+                      spreadRadius: 0.0,
+                      offset: Offset(2.0, 3.0), // shadow direction: bottom right
+                    )
+                  ],
                 ),
-                SizedBox(height: 15),
-                const ListTile(
-                  leading: Icon(Icons.person_pin, color: defaultColor, size: 45),
-                  title: Text(
-                    "Куратор",
-                    style: TextStyle(fontSize: 16),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    SizedBox(height: 5),
+                    const ListTile(
+                      title: Text(
+                        "Общая информация",
+                        style: TextStyle(fontSize: 16),
+                      ),
+                      subtitle: Text(
+                          "Факультет: Экономический\nКурс: 3\nГруппа: 1920\nФорма обучения: Очная"),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 15,),
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.white),
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  image: DecorationImage(
+                    image: AssetImage("assets/images/curator.png"),
+                    fit: BoxFit.cover,
                   ),
-                  subtitle: Text("ФИО: Фалько Лидия Петровна\nТелефон: +375447688454\nПочта: falko@mitso.by"),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey,
+                      blurRadius: 2.0,
+                      spreadRadius: 0.0,
+                      offset: Offset(2.0, 3.0), // shadow direction: bottom right
+                    )
+                  ],
                 ),
-                SizedBox(height: 5),
-              ],
-            ),
-          ),
-      ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    SizedBox(height: 5),
+                    const ListTile(
+                      title: Text(
+                        "Общая информация",
+                        style: TextStyle(fontSize: 16),
+                      ),
+                      subtitle: Text(
+                          "Факультет: Экономический\nКурс: 3\nГруппа: 1920\nФорма обучения: Очная"),
+                    ),
+                  ],
+                ),
+              )
+            ],
+          )),
     ]));
   }
 }

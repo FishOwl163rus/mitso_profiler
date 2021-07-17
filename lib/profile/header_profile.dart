@@ -15,7 +15,7 @@ class HeaderProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(bottom: 10),
-      height: size.height * 0.21,
+      height: size.height * 0.315,
       child: Stack(
         children: <Widget>[
           Container(
@@ -24,13 +24,58 @@ class HeaderProfile extends StatelessWidget {
               right: defaultPadding,
               bottom: defaultPadding,
             ),
-            height: size.height * 0.2 - 50,
+            height: size.height * 0.3 - 50,
             decoration: BoxDecoration(
               color: defaultColor,
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(36),
                 bottomRight: Radius.circular(36),
               ),
+            ),
+          ),
+          Positioned(
+            top: 25,
+            left: 0,
+            right: 0,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                MaterialButton(
+                  padding: EdgeInsets.all(9),
+                  height: 0,
+                  minWidth: 0,
+                  shape: CircleBorder(),
+                  child: Icon(
+                    Icons.logout,
+                    color: Colors.white,
+                    size: 27,
+                  ),
+                  onPressed: () {
+                    //Do something
+                  },
+                ),
+                Text(
+                  'Профиль студента',
+                  style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold),
+                ),
+                MaterialButton(
+                  padding: EdgeInsets.all(9),
+                  height: 0,
+                  minWidth: 0,
+                  shape: CircleBorder(),
+                  child: Icon(
+                    Icons.settings,
+                    color: Colors.white,
+                    size: 27,
+                  ),
+                  onPressed: () {
+                    //Do something
+                  },
+                ),
+              ],
             ),
           ),
           Positioned(
@@ -52,7 +97,8 @@ class HeaderProfile extends StatelessWidget {
                     ),
                   ],
                 ),
-                child: ClipOval(child: Image.asset("assets/images/student.jpg")),
+                child:
+                    ClipOval(child: Image.asset("assets/images/student.jpg")),
               ))
         ],
       ),

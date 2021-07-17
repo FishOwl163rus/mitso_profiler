@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mitso_profiler/profile/profile_content.dart';
+import 'package:mitso_profiler/schedule/schedule.dart';
 
 import '../constants.dart';
 import 'header_profile.dart';
@@ -19,10 +20,7 @@ class Profile extends State<ProfileWidget>  {
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
     ProfileContent(),
-    Text(
-      'Index 1: Business',
-      style: optionStyle,
-    ),
+    ScheduleWidget(),
   ];
 
   void _onItemTapped(int index) {
@@ -34,30 +32,6 @@ class Profile extends State<ProfileWidget>  {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Личный кабинет'),
-        centerTitle: true,
-        elevation: 0,
-        backgroundColor: defaultColor,
-        actions: [
-          IconButton(
-            splashRadius: 23,
-            icon: Icon(
-              Icons.settings,
-              color: Colors.white,
-            ),
-            onPressed: () {},
-          ),
-        ],
-        leading: IconButton(
-          splashRadius: 24,
-          icon: Icon(
-            Icons.logout,
-            color: Colors.white,
-          ),
-          onPressed: () {},
-        ),
-      ),
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
